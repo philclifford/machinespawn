@@ -165,7 +165,7 @@ function container_list() {
 function container_clean_bootstrap() {
     local NAME="${1}"
     if [ -n "${NAME}" ] && [ -d "${BOOTSTRAP_CACHE}/${NAME}" ]; then
-        rm -rf "${BOOTSTRAP_CACHE}/${NAME}"
+        rm -rf "${BOOTSTRAP_CACHE:?}/${NAME:?}"
     fi
 }
 
